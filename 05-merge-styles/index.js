@@ -24,17 +24,12 @@ const writeStyles = async () => {
   const writeStream = fs.createWriteStream(path.join(__dirname, 'project-dist', 'bundle.css'));
 
   const filesList = await getCSSFiles();
-  // let styles = '';
 
   filesList.forEach(file => {
     const readStream = fs.createReadStream(path.join(__dirname, 'styles', file), 'utf-8');
 
     readStream.on('data', chunk => writeStream.write(chunk));
-    // readStream.on('end', () => console.log(styles));
   });
-
-  // writeStream.write(styles);
-  // console.log(styles);
 };
 
 writeStyles();
