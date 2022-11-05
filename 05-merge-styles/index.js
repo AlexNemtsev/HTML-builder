@@ -34,5 +34,3 @@ const mergeStyles = async (stylesFolder, outputFile) => {
 };
 
 mergeStyles(path.join(__dirname, 'styles'), path.join(__dirname, 'project-dist', 'bundle.css'));
-
-export default mergeStyles;
