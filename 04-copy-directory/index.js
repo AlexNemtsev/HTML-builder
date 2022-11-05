@@ -32,3 +32,5 @@ const copyDir = async (fromFolder, toFolder) => {
 };
 
 copyDir(path.join(__dirname, 'files'), path.join(__dirname, 'files-copy'));
+
+export default copyDir;

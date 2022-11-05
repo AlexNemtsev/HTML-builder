@@ -20,7 +20,7 @@ const getCSSFiles = async (stylesFolder) => {
   return out;
 };
 
-const writeStyles = async (stylesFolder, outputFile) => {
+const mergeStyles = async (stylesFolder, outputFile) => {
   const writeStream = fs.createWriteStream(outputFile);
 
   const filesList = await getCSSFiles(stylesFolder);
@@ -33,4 +33,6 @@ const writeStyles = async (stylesFolder, outputFile) => {
   });
 };
 
-writeStyles(path.join(__dirname, 'styles'), path.join(__dirname, 'project-dist', 'bundle.css'));
+mergeStyles(path.join(__dirname, 'styles'), path.join(__dirname, 'project-dist', 'bundle.css'));
+
+export default mergeStyles;
